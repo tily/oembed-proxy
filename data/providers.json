@@ -1,0 +1,549 @@
+[
+  {
+    "name": "IFTTT",
+    "url": "http://www.ifttt.com/",
+    "url_scheme": "http://ifttt.com/recipes/*",
+    "api_endpoint": "http://www.ifttt.com/oembed/",
+    "example": "https://ifttt.com/oembed?url=https%3A%2F%2Fifttt.com%2Frecipes%2F107745",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "YouTube",
+    "url": "http://www.youtube.com/",
+    "api_endpoint": "http://www.youtube.com/oembed",
+    "supports_discovery_via_link_tags": true,
+    "example": "http://www.youtube.com/oembed?url=http%3A//www.youtube.com/watch?v%3D-UUx10KOWIE&format=xml"
+  },
+  {
+    "name": "Flickr",
+    "url": "http://www.flickr.com/",
+    "url_scheme": [
+      "http://*.flickr.com/photos/*",
+      "http://flic.kr/p/*"
+    ],
+    "api_endpoint": "http://www.flickr.com/services/oembed/",
+    "example": "http://flickr.com/services/oembed?url=http%3A%2F%2Fflickr.com%2Fphotos%2Fbees%2F2362225867%2F",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Viddler",
+    "url": "http://www.viddler.com/",
+    "url_scheme": "http://www.viddler.com/v/*",
+    "api_endpoint": "http://www.viddler.com/oembed/",
+    "documentation": "http://developers.viddler.com/documentation/oembed/",
+    "example": "http://www.viddler.com/oembed/?format=xml&url=http%3A%2F%2Fwww.viddler.com%2Fv%2F1646c55"
+  },
+  {
+    "name": "Revision3",
+    "url": "http://revision3.com/",
+    "url_scheme": "http://*.revision3.com/*",
+    "api_endpoint": "http://revision3.com/api/oembed/",
+    "example": "http://revision3.com/api/oembed/?url=http%3A//revision3.com/diggnation/2008-04-17xsanned/&format=xml"
+  },
+  {
+    "name": "Hulu",
+    "url": "http://www.hulu.com/",
+    "url_scheme": "http://www.hulu.com/watch/*",
+    "api_endpoint": "http://www.hulu.com/api/oembed.{format}",
+    "example": "http://www.hulu.com/api/oembed.xml?url=http%3A//www.hulu.com/watch/20807/late-night-with-conan-obrien-wed-may-21-2008"
+  },
+  {
+    "name": "Vimeo",
+    "url": "http://vimeo.com/",
+    "example": "http://vimeo.com/api/oembed.xml?url=http%3A//vimeo.com/7100569"
+  },
+  {
+    "name": "CollegeHumor",
+    "url": "http://www.collegehumor.com/",
+    "example": "http://www.collegehumor.com/oembed.xml?url=http%3A%2F%2Fwww.collegehumor.com%2Fvideo%2F3922232%2Fprank-war-7-the-half-million-dollar-shot",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Jest",
+    "url": "http://www.jest.com/",
+    "example": [
+      "http://www.jest.com/oembed.xml?url=http%3A%2F%2Fwww.jest.com%2Fvideo%2F197394%2Fpaul-ryan-rap",
+      "http://www.jest.com/oembed.json?url=http%3A%2F%2Fwww.jest.com%2Fvideo%2F197394%2Fpaul-ryan-rap"
+    ],
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Poll Everywhere",
+    "url": "http://www.polleverywhere.com/",
+    "url_scheme": [
+      "http://www.polleverywhere.com/polls/*",
+      "http://www.polleverywhere.com/multiple_choice_polls/*",
+      "http://www.polleverywhere.com/free_text_polls/*"
+    ],
+    "api_endpoint": "http://www.polleverywhere.com/services/oembed/",
+    "documentation": "http://api.polleverywhere.com/index.php?title=OEmbed",
+    "example": "http://polleverywhere.com/services/oembed?url=http://www.polleverywhere.com/multiple_choice_polls/LTIwNzM1NTczNTE&format=xml"
+  },
+  {
+    "name": " Embedly",
+    "url": "http://api.embed.ly",
+    "url_scheme": "Various",
+    "api_endpoint": "http://api.embed.ly/1/oembed",
+    "documentation": "http://api.embed.ly/documentation",
+    "example": "http://api.embed.ly/1/oembed?url=http://www.youtube.com/watch%3Fv%3DB-m6JDYRFvk"
+  },
+  {
+    "name": " iFixit",
+    "url": "http://www.iFixit.com",
+    "url_scheme": "http://www.ifixit.com/Guide/View/*",
+    "documentation": "http://www.ifixit.com/api/doc/embed",
+    "example": "http://www.ifixit.com/Embed?url=http%3A%2F%2Fwww.ifixit.com%2FTeardown%2FiPhone-4-Teardown%2F3130%2F1&format=json"
+  },
+  {
+    "name": " SmugMug",
+    "url": "http://www.smugmug.com/",
+    "documentation": "http://wiki.smugmug.net/display/API/oEmbed",
+    "example": "http://api.smugmug.com/services/oembed/?url=http://www.smugmug.com/popular/all%23125787395_hQSj9",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Deviantart.com",
+    "url": "http://www.deviantart.com",
+    "documentation": "http://www.deviantart.com/developers/oembed",
+    "example": "http://backend.deviantart.com/oembed?format=xml&url=http%3A%2F%2Fbrowse.deviantart.com%2Fart%2FVita-Brevis-379998342"
+  },
+  {
+    "name": " SlideShare",
+    "url": "http://www.slideshare.net/",
+    "documentation": "http://www.slideshare.net/developers/oembed",
+    "example": "http://www.slideshare.net/api/oembed/2?url=http://www.slideshare.net/haraldf/business-quotes-for-2011&format=json",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "WordPress.com",
+    "url": "http://wordpress.com/",
+    "documentation": "http://develop.wordpress.com/oembed-provider-api/",
+    "example": "http://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fmatt.wordpress.com%2F2011%2F07%2F14%2Fclouds-over-new-york%2F&for=oembed.com",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "chirbit.com",
+    "url": "http://www.chirbit.com/",
+    "example": "http://chirb.it/oembed.json?url=http%3A//chirb.it/OBnAr1",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "nfb.ca",
+    "url": "http://www.nfb.ca/",
+    "example": "http://www.nfb.ca/remote/services/oembed/?url=http://www.nfb.ca/film/aboriginality&format=xml",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Scribd",
+    "url": "http://www.scribd.com/",
+    "example": "http://www.scribd.com/services/oembed/?format=xml&url=http://www.scribd.com/doc/110799637/Synthesis-of-Knowledge-Effects-of-Fire-and-Thinning-Treatments-on-Understory-Vegetation-in-Dry-U-S-Forests"
+  },
+  {
+    "name": "Dotsub",
+    "url": "http://dotsub.com/",
+    "url_scheme": "http://dotsub.com/view/*",
+    "documentation": "http://dotsub.com/solutions/oEmbed",
+    "example": "http://dotsub.com/services/oembed?url=http://dotsub.com/view/665bd0d5-a9f4-4a07-9d9e-b31ba926ca78&format=xml"
+  },
+  {
+    "name": "Animoto",
+    "url": "http://animoto.com/",
+    "url_scheme": "http://animoto.com/play/*",
+    "api_endpoint": "http://animoto.com/oembeds/create",
+    "documentation": "http://help.animoto.com/entries/109992-oEmbed-API",
+    "example": "http://animoto.com/oembeds/create/?format=xml&url=http%3A%2F%2Fanimoto.com%2Fplay%2FJzwsBn5FRVxS0qoqcBP5zA"
+  },
+  {
+    "name": "Rdio",
+    "url": "http://rdio.com/",
+    "url_scheme": [
+      "http://*.rdio.com/artist/*",
+      "http://*.rdio.com/people/*"
+    ],
+    "api_endpoint": "http://www.rdio.com/api/oembed/",
+    "documentation": "http://developer.rdio.com/docs/oEmbed",
+    "example": "http://www.rdio.com/api/oembed/?format=json&url=http://www.rdio.com/artist/The_Black_Keys/album/Brothers/"
+  },
+  {
+    "name": "MixCloud",
+    "url": "http://mixcloud.com",
+    "documentation": "http://www.mixcloud.com/developers/documentation/",
+    "example": "http://www.mixcloud.com/oembed/?url=http%3A//www.mixcloud.com/TechnoLiveSets/jon_rundell-live-electrobeach-festival-benidorm-16-08-2013/&format=xml"
+  },
+  {
+    "name": "Clyp",
+    "url": "http://clyp.it/",
+    "url_scheme": [
+      "http://clyp.it/*",
+      "http://clyp.it/playlist/*"
+    ],
+    "api_endpoint": "http://api.clyp.it/oembed/",
+    "example": [
+      "http://api.clyp.it/oembed?url=http://clyp.it/zhwuptos&maxwidth=720",
+      "http://api.clyp.it/oembed?url=http://clyp.it/playlist/1kmfioze"
+    ],
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Screenr",
+    "url": "http://www.screenr.com",
+    "example": "http://www.screenr.com/api/oembed.xml?url=http://screenr.com/3jns"
+  },
+  {
+    "name": "FunnyOrDie",
+    "url": "http://www.funnyordie.com/",
+    "url_scheme": "http://www.funnyordie.com/videos/*",
+    "api_endpoint": "http://www.funnyordie.com/oembed.{format}",
+    "example": "http://www.funnyordie.com/oembed.xml?url=http://www.funnyordie.com/videos/a7311134ac/patton-oswalt-in-heavy-metal"
+  },
+  {
+    "name": "Poll Daddy",
+    "url": "http://polldaddy.com",
+    "url_scheme": [
+      "http://*.polldaddy.com/s/*",
+      "http://*.polldaddy.com/poll/*",
+      "http://*.polldaddy.com/ratings/*"
+    ],
+    "api_endpoint": "http://polldaddy.com/oembed/",
+    "documentation": "http://support.polldaddy.com/oembed/",
+    "example": "http://polldaddy.com/oembed/?url=http://polldaddy.com/ratings/39/&format=xml"
+  },
+  {
+    "name": "Ted",
+    "url": "http://ted.com",
+    "url_scheme": "http://ted.com/talks/*",
+    "example": "http://www.ted.com/talks/oembed.xml?url=http://www.ted.com/talks/jill_bolte_taylor_s_powerful_stroke_of_insight.html"
+  },
+  {
+    "name": "VideoJug",
+    "url": "http://videos.sapo.pt/",
+    "url_scheme": [
+      "http://www.videojug.com/film/*",
+      "http://www.videojug.com/interview/*"
+    ],
+    "api_endpoint": "http://www.videojug.com/oembed.{format}",
+    "example": "http://www.videojug.com/oembed.xml?url=http://www.videojug.com/film/how-to-tie-a-knot-braid"
+  },
+  {
+    "name": "Sapo Videos",
+    "url": "http://videos.sapo.pt",
+    "url_scheme": "http://videos.sapo.pt/*",
+    "api_endpoint": "http://videos.sapo.pt/oembed",
+    "example": "http://videos.sapo.pt/oembed?url=http://videos.sapo.pt/dNbiosGa9YZHfLrhkA88&format=xml"
+  },
+  {
+    "name": "Justin.tv",
+    "url": "http://www.justin.tv",
+    "url_scheme": "http://www.justin.tv/*",
+    "api_endpoint": "http://api.justin.tv/api/embed/from_url.{format}",
+    "example": "http://api.justin.tv/api/embed/from_url.xml?url=http://www.justin.tv/deepellumonair"
+  },
+  {
+    "name": "Official FM",
+    "url": "http://official.fm/",
+    "url_scheme": [
+      "http://official.fm/tracks/*",
+      "http://official.fm/playlists/*"
+    ],
+    "api_endpoint": "http://official.fm/services/oembed.{format}",
+    "documentation": "https://github.com/officialfm/api/blob/master/sections/oembed.md",
+    "example": "http://official.fm/services/oembed.json?url=http://official.fm/tracks/npTR"
+  },
+  {
+    "name": "HuffDuffer",
+    "url": "http://huffduffer.com",
+    "url_scheme": "http://huffduffer.com/*/*",
+    "api_endpoint": "http://huffduffer.com/oembed",
+    "example": "http://huffduffer.com/oembed?url=http://huffduffer.com/jxpx777/125342&format=xml"
+  },
+  {
+    "name": "Shoudio",
+    "url": "http://shoudio.com",
+    "url_scheme": [
+      "http://shoudio.com/*",
+      "http://shoud.io/*"
+    ],
+    "api_endpoint": "http://shoudio.com/api/oembed",
+    "example": "http://shoudio.com/api/oembed?format=xml&url=http://shoudio.com/user/shoister/status/8122"
+  },
+  {
+    "name": "Moby Picture",
+    "url": "http://www.mobypicture.com",
+    "url_scheme": [
+      "http://www.mobypicture.com/user/*/view/*",
+      "http://moby.to/*"
+    ],
+    "api_endpoint": "http://api.mobypicture.com/oEmbed",
+    "example": "http://api.mobypicture.com/oEmbed?format=xml&url=http://mobypicture.com/user/Henk_Voermans/view/15880044"
+  },
+  {
+    "name": "23HQ",
+    "url": "http://www.23hq.com",
+    "url_scheme": "http://www.23hq.com/*/photo/*",
+    "api_endpoint": "http://www.23hq.com/23/oembed",
+    "example": "http://www.23hq.com/23/oembed?url=http://www.23hq.com/mprove/photo/13297717"
+  },
+  {
+    "name": "Cacoo",
+    "url": "https://cacoo.com",
+    "url_scheme": "https://cacoo.com/diagrams/*",
+    "api_endpoint": "http://cacoo.com/oembed.{format}",
+    "documentation": "https://cacoo.com/lang/en/api_oembed",
+    "example": "http://cacoo.com/oembed.xml?url=http://cacoo.com/diagrams/m9uZtizE5I2GkFR6/"
+  },
+  {
+    "name": "Dipity",
+    "url": "http://www.dipity.com",
+    "url_scheme": "http://www.dipity.com/*/*/",
+    "api_endpoint": "http://www.dipity.com/oembed/timeline/",
+    "example": "http://www.dipity.com/oembed/timeline/?format=xml&url=http://www.dipity.com/ragutier/Historia_de_la_Web/"
+  },
+  {
+    "name": "Roomshare",
+    "url": "http://roomshare.jp",
+    "url_scheme": [
+      "http://roomshare.jp/post/*",
+      "http://roomshare.jp/en/post/*"
+    ],
+    "api_endpoint": "http://roomshare.jp/en/oembed.{format}",
+    "example": "http://roomshare.jp/en/oembed.xml?url=http://roomshare.jp/en/post/137167"
+  },
+  {
+    "name": "Daily Motion",
+    "url": "http://www.dailymotion.com",
+    "url_scheme": "http://www.dailymotion.com/video/*",
+    "api_endpoint": "http://www.dailymotion.com/services/oembed",
+    "documentation": "http://www.dailymotion.com/doc/api/oembed.html",
+    "example": "http://www.dailymotion.com/services/oembed?format=xml&url=http://www.dailymotion.com/video/xoxulz_babysitter_animals"
+  },
+  {
+    "name": "Crowd Ranking",
+    "url": "http://crowdranking.com",
+    "url_scheme": "http://crowdranking.com/*/*",
+    "api_endpoint": "http://crowdranking.com/api/oembed.{format}",
+    "example": "http://crowdranking.com/api/oembed.xml?url=http://crowdranking.com/rankings/t470g0--best-tea"
+  },
+  {
+    "name": "CircuitLab",
+    "url": "https://www.circuitlab.com/",
+    "url_scheme": "https://www.circuitlab.com/circuit/*",
+    "example": "https://www.circuitlab.com/circuit/oembed/?format=json&url=https://www.circuitlab.com/circuit/e38756/555-timer-as-astable-multivibrator-oscillator/",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Geograph Britain and Ireland",
+    "url": "https://www.geograph.org.uk/",
+    "url_scheme": [
+      "http://*.geograph.org.uk/*",
+      "http://*.geograph.co.uk/*",
+      "http://*.geograph.ie/*",
+      "http://*.wikimedia.org/*_geograph.org.uk_*"
+    ],
+    "example": [
+      "http://api.geograph.org.uk/api/oembed?url=http://www.geograph.org.uk/photo/2928776&format=json",
+      "http://api.geograph.org.uk/api/oembed?url=http://s0.geograph.org.uk/geophotos/02/92/87/2928776_72cdbeab.jpg"
+    ]
+  },
+  {
+    "name": "Geograph Germany",
+    "url": "http://geo-en.hlipp.de/",
+    "url_scheme": [
+      "http://geo-en.hlipp.de/*",
+      "http://geo.hlipp.de/*",
+      "http://germany.geograph.org/*"
+    ],
+    "example": [
+      "http://geo.hlipp.de/restapi.php/api/oembed?url=http://geo.hlipp.de/photo/20260&format=json",
+      "http://geo.hlipp.de/restapi.php/api/oembed?url=http://geo.hlipp.de/photos/02/02/020260_dcfdbf8e.jpg"
+    ]
+  },
+  {
+    "name": "Geograph Channel Islands",
+    "url": "http://channel-islands.geograph.org/",
+    "url_scheme": [
+      "http://*.geograph.org.gg/*",
+      "http://*.geograph.org.je/*",
+      "http://channel-islands.geograph.org/*",
+      "http://channel-islands.geographs.org/*",
+      "http://*.channel.geographs.org/*"
+    ],
+    "example": [
+      "http://www.geograph.org.gg/api/oembed?url=http://www.geograph.org.gg/photo/773",
+      "http://www.geograph.org.gg/api/oembed?url=http://s1.channel.geographs.org/photos/00/07/000773_e1e23765_120x120.jpg&format=json"
+    ]
+  },
+  {
+    "name": "Quiz.biz",
+    "url": "http://www.quiz.biz/",
+    "url_scheme": "http://www.quiz.biz/quizz-*.html",
+    "documentation": "http://www.quiz.biz/aide-oembed.php",
+    "example": "http://www.quiz.biz/api/oembed?url=http://www.quiz.biz/quizz-182015.html&format=json",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Quizz.biz",
+    "url": "http://www.quizz.biz/",
+    "url_scheme": "http://www.quizz.biz/quizz-*.html",
+    "documentation": "http://www.quizz.biz/aide-oembed.php",
+    "example": "http://www.quizz.biz/api/oembed?url=http://www.quizz.biz/quizz-339842.html&format=json",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Coub",
+    "url": "http://coub.com/",
+    "url_scheme": [
+      "http://coub.com/view/*",
+      "http://coub.com/embed/*"
+    ],
+    "api_endpoint": "http://coub.com/api/oembed.{format}",
+    "example": [
+      "http://coub.com/api/oembed.xml?url=http://coub.com/view/um0um0",
+      "http://coub.com/api/oembed.json?url=http://coub.com/view/um0um0",
+      "http://coub.com/api/oembed.xml?url=http://coub.com/embed/um0um0",
+      "http://coub.com/api/oembed.json?url=http://coub.com/embed/um0um0"
+    ]
+  },
+  {
+    "name": "SpeakerDeck",
+    "url": "https://speakerdeck.com",
+    "example": "https://speakerdeck.com/oembed.json?url=https://speakerdeck.com/wallat/why-backbone",
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "Alpha App Net",
+    "url": "https://alpha.app.net",
+    "documentation": "http://developers.app.net/docs/other/oembed/",
+    "example": "https://alpha-api.app.net/oembed?url=https://alpha.app.net/breakingnews/post/9153521"
+  },
+  {
+    "name": "BlipTV",
+    "url": "http://blip.tv/",
+    "example": "http://blip.tv/oembed/?url=http://blip.tv/nostalgiacritic/nostalgia-critic-sailor-moon-6625851"
+  },
+  {
+    "name": "YFrog",
+    "url": "http://yfrog.com/",
+    "documentation": "http://twitter.yfrog.com/page/api#a8",
+    "example": "http://www.yfrog.com/api/oembed?url=http://yfrog.com/jukynnj"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://instagram.com",
+    "documentation": "http://instagram.com/developer/embedding/#oembed",
+    "example": "http://api.instagram.com/oembed?url=http://instagram.com/p/V8UMy0LjpX/"
+  },
+  {
+    "name": "SoundCloud",
+    "url": "http://soundcloud.com/",
+    "url_scheme": "http://soundcloud.com/*",
+    "example": "https://soundcloud.com/oembed?url=https://www.soundcloud.com/comedy-central/the-unf-kables-dave-attell/&format=xml"
+  },
+  {
+    "name": "On Aol",
+    "url": "http://on.aol.com/",
+    "url_scheme": "http://on.aol.com/video/*",
+    "example": "http://on.aol.com/api?url=http://on.aol.com/video/plans-to-clone-john-lennon-using-one-of-his-teeth-517906689"
+  },
+  {
+    "name": "Kickstarter",
+    "url": "http://www.kickstarter.com",
+    "url_scheme": "http://www.kickstarter.com/projects/*",
+    "example": "http://www.kickstarter.com/services/oembed?url=http%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1115015686%2Fhelp-support-the-kiggins-theatre-to-go-digital"
+  },
+  {
+    "name": "Ustream",
+    "url": "http://www.ustream.tv",
+    "url_scheme": [
+      "http://*.ustream.tv/*",
+      "http://*.ustream.com/*"
+    ],
+    "api_endpoint": "http://www.ustream.tv/oembed",
+    "example": "http://www.ustream.tv/oembed?url=http://www.ustream.tv/channel/americatv2oficial"
+  },
+  {
+    "name": "GMEP",
+    "url": "https://gmep.org",
+    "url_scheme": "https://gmep.org/media/*",
+    "api_endpoint": "https://gmep.org/oembed.{format}",
+    "example": "https://gmep.org/oembed.xml?url=https://gmep.org/media/14769"
+  },
+  {
+    "name": "Daily Mile",
+    "url": "http://www.dailymile.com",
+    "url_scheme": "http://www.dailymile.com/people/*/entries/*",
+    "api_endpoint": "http://api.dailymile.com/oembed?format=json",
+    "example": "http://api.dailymile.com/oembed?format=json&url=http://www.dailymile.com/people/EddieJ3/entries/24776213"
+  },
+  {
+    "name": "Sketchfab",
+    "url": "http://sketchfab.com",
+    "url_scheme": [
+      "http://sketchfab.com/models/*",
+      "https://sketchfab.com/models/*"
+    ],
+    "api_endpoint": "http://sketchfab.com/oembed",
+    "example": "https://sketchfab.com/oembed?url=https://sketchfab.com/models/e7995659092c4d8c92031b0a03887cfa"
+  },
+  {
+    "name": "Meetup",
+    "url": "http://www.meetup.com",
+    "url_scheme": [
+      "http://meetup.com/*",
+      "http://meetu.ps/*"
+    ],
+    "api_endpoint": "https://api.meetup.com/oembed",
+    "documentation": "http://www.meetup.com/meetup_api/docs/oembed/",
+    "example": "https://api.meetup.com/oembed?format=json&url=http://www.meetup.com/PHPColMeetup/photos/"
+  },
+  {
+    "name": "VideoFork",
+    "url": "http://videofork.com",
+    "url_scheme": "http://videofork.com/oembed/([0-9]+)",
+    "api_endpoint": "http://videofork.com/oembed",
+    "example": "http://videofork.com/oembed/33536"
+  },
+  {
+    "name": "AudioSnaps",
+    "url": "http://audiosnaps.com/",
+    "url_scheme": "http://audiosnaps.com/k/*",
+    "example": [
+      "http://audiosnaps.com/service/oembed?url=http://audiosnaps.com/k/d8wi/&format=json",
+      "http://audiosnaps.com/service/oembed?url=http://audiosnaps.com/k/d8wi/&format=xml"
+    ],
+    "supports_discovery_via_link_tags": true
+  },
+  {
+    "name": "edocr",
+    "url": "http://www.edocr.com",
+    "url_scheme": "http://edocr.com/docs/*",
+    "api_endpoint": "http://edocr.com/api/oembed",
+    "documentation": "http://www.edocr.com/oembed-documentation",
+    "example": "http://www.edocr.com/api/oembed/?format=json&url=http://www.edocr.com/doc/144677/capillary-technologies-corporate-brochure"
+  },
+  {
+    "name": "RapidEngage",
+    "url": "https://rapidengage.com",
+    "url_scheme": "https://rapidengage.com/s/*",
+    "api_endpoint": "https://rapidengage.com/api/oembed",
+    "documentation": "https://rapidengage.com/developer/docs#oembed",
+    "example": [
+      "https://rapidengage.com/api/oembed?url=https://rapidengage.com/s/6b1faa05",
+      "https://rapidengage.com/api/oembed?url=https://rapidengage.com/s/6b1faa05&format=xml"
+    ]
+  },
+  {
+    "name": "Ora TV",
+    "url": "http://www.ora.tv",
+    "supports_discovery_via_link_tags": true,
+    "api_endpoint": "https://www.ora.tv/oembed/*?format={format}",
+    "example": "https://www.ora.tv/oembed/0_6e6tvou17xau?format=json"
+  },
+  {
+    "name": "Getty Images",
+    "url": "http://www.gettyimages.com",
+    "url_scheme": "http://gty.im/*",
+    "api_endpoint": "http://embed.gettyimages.com/oembed",
+    "documentation": "http://github.com/gettyimages/connect/blob/master/documentation/endpoints/oembed/oEmbed.md",
+    "example": "http://embed.gettyimages.com/oembed?url=http%3a%2f%2fgty.im%2f74917285"
+  }
+]
