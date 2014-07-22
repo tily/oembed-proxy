@@ -48,3 +48,49 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+require 'json'
+require 'nokogiri'
+require 'open-uri'
+
+desc 'scrape oembed providers and save to data/providers.json'
+task :scrape_oembed_providers do
+	providers = []
+	
+	doc = Nokogiri::HTML(open('http://oembed.com'))
+	
+	paragraphs = (doc.xpath('//a[@id="section7.1"]/following::p') & doc.xpath('//a[@id="section7.2"]/preceding::p'))
+	
+	paragraphs.each do |paragraph|
+		provider = Hash.new {|h, k| h[k] = Array.new }
+	
+		match_data = paragraph.text.match(/(?<name>.+) \((?<url>.+)\)/)
+		provider['name'], provider['url'] = match_data[:name], match_data[:url]
+	
+		list = paragraph.xpath('following::ul[1]/li')
+		list.each do |item|
+			case item.text
+			when /URL scheme: ([^\s]+)/
+				provider['url_scheme'] << $1
+			when /API endpoint: ([^\s]+)/
+				provider['api_endpoint'] << $1
+			when /Documentation: ([^\s]+)/
+				provider['documentation'] << $1
+			when /Example: ([^\s]+)/
+				provider['example'] << $1
+			when /Supports discovery via <link> tags/
+				provider['supports_discovery_via_link_tags'] = true
+			end
+		end
+	
+		provider.each do |key, value|
+			if value.is_a?(Array) && value.size == 1
+				provider[key] = value.first
+			end
+		end
+	
+		providers << provider
+	end
+	
+	File.write('./data/providers.json', JSON.pretty_generate(providers))
+end
