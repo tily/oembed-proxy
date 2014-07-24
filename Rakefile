@@ -64,19 +64,19 @@ task :scrape_oembed_providers do
 	paragraphs.each do |paragraph|
 		provider = Hash.new {|h, k| h[k] = Array.new }
 	
-		match_data = paragraph.text.match(/(?<name>.+) \((?<url>.+)\)/)
+		match_data = paragraph.text.match(/\s*(?<name>.+) \((?<url>.+)\)/)
 		provider['name'], provider['url'] = match_data[:name], match_data[:url]
 	
 		list = paragraph.xpath('following::ul[1]/li')
 		list.each do |item|
 			case item.text
-			when /URL scheme: ([^\s]+)/
-				provider['url_scheme'] << $1
-			when /API endpoint: ([^\s]+)/
-				provider['api_endpoint'] << $1
-			when /Documentation: ([^\s]+)/
+			when /URL (s|S)cheme( \(videos\))?:\s+([^\s]+)/
+				provider['url_scheme'] << $3
+			when /(API endpoint|Endpoint):\s+([^\s]+)/
+				provider['api_endpoint'] << $2
+			when /Documentation:\s+([^\s]+)/
 				provider['documentation'] << $1
-			when /Example: ([^\s]+)/
+			when /Example:\s+([^\s]+)/
 				provider['example'] << $1
 			when /Supports discovery via <link> tags/
 				provider['supports_discovery_via_link_tags'] = true
@@ -88,9 +88,40 @@ task :scrape_oembed_providers do
 				provider[key] = value.first
 			end
 		end
+
+		case provider['name']
+		when 'Ted'
+			provider['api_endpoint'] = 'http://www.ted.com/talks/oembed.{format}'
+		when 'Jest'
+			provider['url_scheme'] = 'http://www.jest.com/video/*'
+		when 'YouTube'
+			provider['url_scheme'] = 'http://www.youtube.com/watch?*'
+		when 'Vimeo'
+			provider['url_scheme'] = 'http://vimeo.com/*'
+		end
+
+		if provider['api_endpoint'].empty?
+			puts "Warning: #{provider['name']} does not include api_endpoint"
+		end
+
+		if provider['url_scheme'].empty?
+			puts "Warning: #{provider['name']} does not include url_scheme"
+		end
+
+		if provider['name'] == 'Embedly'
+			next
+		end
 	
 		providers << provider
 	end
 	
 	File.write('./data/providers.json', JSON.pretty_generate(providers))
+end
+
+desc 'scrape microsoft mime types'
+task :scrape_microsoft_mime_types do
+	doc = Nokogiri::HTML(open('http://filext.com/faq/office_mime_types.php'))
+	cells = doc.xpath('//table[@class="MsoNormalTable"]/tbody/tr/td[2]')
+	types = cells.reject {|c| c.text == 'MIME Type' }.map {|c| c.text }.uniq
+	File.write('./data/microsoft_mime_types.json', JSON.pretty_generate(types))
 end

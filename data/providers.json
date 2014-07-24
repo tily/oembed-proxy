@@ -12,7 +12,8 @@
     "url": "http://www.youtube.com/",
     "api_endpoint": "http://www.youtube.com/oembed",
     "supports_discovery_via_link_tags": true,
-    "example": "http://www.youtube.com/oembed?url=http%3A//www.youtube.com/watch?v%3D-UUx10KOWIE&format=xml"
+    "example": "http://www.youtube.com/oembed?url=http%3A//www.youtube.com/watch?v%3D-UUx10KOWIE&format=xml",
+    "url_scheme": "http://www.youtube.com/watch?*"
   },
   {
     "name": "Flickr",
@@ -50,17 +51,23 @@
   {
     "name": "Vimeo",
     "url": "http://vimeo.com/",
-    "example": "http://vimeo.com/api/oembed.xml?url=http%3A//vimeo.com/7100569"
+    "api_endpoint": "http://vimeo.com/api/oembed.{format}",
+    "example": "http://vimeo.com/api/oembed.xml?url=http%3A//vimeo.com/7100569",
+    "url_scheme": "http://vimeo.com/*"
   },
   {
     "name": "CollegeHumor",
     "url": "http://www.collegehumor.com/",
+    "url_scheme": "http://www.collegehumor.com/video/*",
+    "api_endpoint": "http://www.collegehumor.com/oembed.{format}",
     "example": "http://www.collegehumor.com/oembed.xml?url=http%3A%2F%2Fwww.collegehumor.com%2Fvideo%2F3922232%2Fprank-war-7-the-half-million-dollar-shot",
     "supports_discovery_via_link_tags": true
   },
   {
     "name": "Jest",
     "url": "http://www.jest.com/",
+    "url_scheme": "http://www.jest.com/video/*",
+    "api_endpoint": "http://www.jest.com/oembed.{format}",
     "example": [
       "http://www.jest.com/oembed.xml?url=http%3A%2F%2Fwww.jest.com%2Fvideo%2F197394%2Fpaul-ryan-rap",
       "http://www.jest.com/oembed.json?url=http%3A%2F%2Fwww.jest.com%2Fvideo%2F197394%2Fpaul-ryan-rap"
@@ -80,23 +87,21 @@
     "example": "http://polleverywhere.com/services/oembed?url=http://www.polleverywhere.com/multiple_choice_polls/LTIwNzM1NTczNTE&format=xml"
   },
   {
-    "name": " Embedly",
-    "url": "http://api.embed.ly",
-    "url_scheme": "Various",
-    "api_endpoint": "http://api.embed.ly/1/oembed",
-    "documentation": "http://api.embed.ly/documentation",
-    "example": "http://api.embed.ly/1/oembed?url=http://www.youtube.com/watch%3Fv%3DB-m6JDYRFvk"
-  },
-  {
-    "name": " iFixit",
+    "name": "iFixit",
     "url": "http://www.iFixit.com",
     "url_scheme": "http://www.ifixit.com/Guide/View/*",
+    "api_endpoint": "http://www.ifixit.com/Embed",
     "documentation": "http://www.ifixit.com/api/doc/embed",
     "example": "http://www.ifixit.com/Embed?url=http%3A%2F%2Fwww.ifixit.com%2FTeardown%2FiPhone-4-Teardown%2F3130%2F1&format=json"
   },
   {
-    "name": " SmugMug",
+    "name": "SmugMug",
     "url": "http://www.smugmug.com/",
+    "url_scheme": [
+      "http://*.smugmug.com/*",
+      "http://*.example.com/*"
+    ],
+    "api_endpoint": "http://api.smugmug.com/services/oembed/",
     "documentation": "http://wiki.smugmug.net/display/API/oEmbed",
     "example": "http://api.smugmug.com/services/oembed/?url=http://www.smugmug.com/popular/all%23125787395_hQSj9",
     "supports_discovery_via_link_tags": true
@@ -104,12 +109,21 @@
   {
     "name": "Deviantart.com",
     "url": "http://www.deviantart.com",
+    "url_scheme": [
+      "http://*.deviantart.com/art/*",
+      "http://*.deviantart.com/*#/d*",
+      "http://fav.me/*",
+      "http://sta.sh/*"
+    ],
+    "api_endpoint": "http://backend.deviantart.com/oembed",
     "documentation": "http://www.deviantart.com/developers/oembed",
     "example": "http://backend.deviantart.com/oembed?format=xml&url=http%3A%2F%2Fbrowse.deviantart.com%2Fart%2FVita-Brevis-379998342"
   },
   {
-    "name": " SlideShare",
+    "name": "SlideShare",
     "url": "http://www.slideshare.net/",
+    "url_scheme": "http://www.slideshare.net/*/*",
+    "api_endpoint": "http://www.slideshare.net/api/oembed/2",
     "documentation": "http://www.slideshare.net/developers/oembed",
     "example": "http://www.slideshare.net/api/oembed/2?url=http://www.slideshare.net/haraldf/business-quotes-for-2011&format=json",
     "supports_discovery_via_link_tags": true
@@ -117,25 +131,35 @@
   {
     "name": "WordPress.com",
     "url": "http://wordpress.com/",
+    "api_endpoint": "http://public-api.wordpress.com/oembed/",
     "documentation": "http://develop.wordpress.com/oembed-provider-api/",
     "example": "http://public-api.wordpress.com/oembed/1.0/?format=json&url=http%3A%2F%2Fmatt.wordpress.com%2F2011%2F07%2F14%2Fclouds-over-new-york%2F&for=oembed.com",
-    "supports_discovery_via_link_tags": true
+    "supports_discovery_via_link_tags": true,
+    "url_scheme": [
+
+    ]
   },
   {
     "name": "chirbit.com",
     "url": "http://www.chirbit.com/",
+    "url_scheme": "http://chirb.it/*",
+    "api_endpoint": "http://chirb.it/oembed.json",
     "example": "http://chirb.it/oembed.json?url=http%3A//chirb.it/OBnAr1",
     "supports_discovery_via_link_tags": true
   },
   {
     "name": "nfb.ca",
     "url": "http://www.nfb.ca/",
+    "url_scheme": "http://*.nfb.ca/film/*",
+    "api_endpoint": "http://www.nfb.ca/remote/services/oembed/",
     "example": "http://www.nfb.ca/remote/services/oembed/?url=http://www.nfb.ca/film/aboriginality&format=xml",
     "supports_discovery_via_link_tags": true
   },
   {
     "name": "Scribd",
     "url": "http://www.scribd.com/",
+    "url_scheme": "http://www.scribd.com/doc/*",
+    "api_endpoint": "http://www.scribd.com/services/oembed/",
     "example": "http://www.scribd.com/services/oembed/?format=xml&url=http://www.scribd.com/doc/110799637/Synthesis-of-Knowledge-Effects-of-Fire-and-Thinning-Treatments-on-Understory-Vegetation-in-Dry-U-S-Forests"
   },
   {
@@ -143,6 +167,7 @@
     "url": "http://dotsub.com/",
     "url_scheme": "http://dotsub.com/view/*",
     "documentation": "http://dotsub.com/solutions/oEmbed",
+    "api_endpoint": "http://dotsub.com/services/oembed",
     "example": "http://dotsub.com/services/oembed?url=http://dotsub.com/view/665bd0d5-a9f4-4a07-9d9e-b31ba926ca78&format=xml"
   },
   {
@@ -167,6 +192,8 @@
   {
     "name": "MixCloud",
     "url": "http://mixcloud.com",
+    "url_scheme": "http://www.mixcloud.com/*/*/",
+    "api_endpoint": "http://www.mixcloud.com/oembed/",
     "documentation": "http://www.mixcloud.com/developers/documentation/",
     "example": "http://www.mixcloud.com/oembed/?url=http%3A//www.mixcloud.com/TechnoLiveSets/jon_rundell-live-electrobeach-festival-benidorm-16-08-2013/&format=xml"
   },
@@ -187,6 +214,8 @@
   {
     "name": "Screenr",
     "url": "http://www.screenr.com",
+    "url_scheme": "http://www.screenr.com/*/",
+    "api_endpoint": "http://www.screenr.com/api/oembed.{format}",
     "example": "http://www.screenr.com/api/oembed.xml?url=http://screenr.com/3jns"
   },
   {
@@ -212,7 +241,8 @@
     "name": "Ted",
     "url": "http://ted.com",
     "url_scheme": "http://ted.com/talks/*",
-    "example": "http://www.ted.com/talks/oembed.xml?url=http://www.ted.com/talks/jill_bolte_taylor_s_powerful_stroke_of_insight.html"
+    "example": "http://www.ted.com/talks/oembed.xml?url=http://www.ted.com/talks/jill_bolte_taylor_s_powerful_stroke_of_insight.html",
+    "api_endpoint": "http://www.ted.com/talks/oembed.{format}"
   },
   {
     "name": "VideoJug",
@@ -327,6 +357,7 @@
     "name": "CircuitLab",
     "url": "https://www.circuitlab.com/",
     "url_scheme": "https://www.circuitlab.com/circuit/*",
+    "api_endpoint": "https://www.circuitlab.com/circuit/oembed/",
     "example": "https://www.circuitlab.com/circuit/oembed/?format=json&url=https://www.circuitlab.com/circuit/e38756/555-timer-as-astable-multivibrator-oscillator/",
     "supports_discovery_via_link_tags": true
   },
@@ -339,6 +370,7 @@
       "http://*.geograph.ie/*",
       "http://*.wikimedia.org/*_geograph.org.uk_*"
     ],
+    "api_endpoint": "http://api.geograph.org.uk/api/oembed",
     "example": [
       "http://api.geograph.org.uk/api/oembed?url=http://www.geograph.org.uk/photo/2928776&format=json",
       "http://api.geograph.org.uk/api/oembed?url=http://s0.geograph.org.uk/geophotos/02/92/87/2928776_72cdbeab.jpg"
@@ -352,6 +384,7 @@
       "http://geo.hlipp.de/*",
       "http://germany.geograph.org/*"
     ],
+    "api_endpoint": "http://geo.hlipp.de/restapi.php/api/oembed",
     "example": [
       "http://geo.hlipp.de/restapi.php/api/oembed?url=http://geo.hlipp.de/photo/20260&format=json",
       "http://geo.hlipp.de/restapi.php/api/oembed?url=http://geo.hlipp.de/photos/02/02/020260_dcfdbf8e.jpg"
@@ -367,6 +400,7 @@
       "http://channel-islands.geographs.org/*",
       "http://*.channel.geographs.org/*"
     ],
+    "api_endpoint": "http://www.geograph.org.gg/api/oembed",
     "example": [
       "http://www.geograph.org.gg/api/oembed?url=http://www.geograph.org.gg/photo/773",
       "http://www.geograph.org.gg/api/oembed?url=http://s1.channel.geographs.org/photos/00/07/000773_e1e23765_120x120.jpg&format=json"
@@ -376,6 +410,7 @@
     "name": "Quiz.biz",
     "url": "http://www.quiz.biz/",
     "url_scheme": "http://www.quiz.biz/quizz-*.html",
+    "api_endpoint": "http://www.quiz.biz/api/oembed",
     "documentation": "http://www.quiz.biz/aide-oembed.php",
     "example": "http://www.quiz.biz/api/oembed?url=http://www.quiz.biz/quizz-182015.html&format=json",
     "supports_discovery_via_link_tags": true
@@ -384,6 +419,7 @@
     "name": "Quizz.biz",
     "url": "http://www.quizz.biz/",
     "url_scheme": "http://www.quizz.biz/quizz-*.html",
+    "api_endpoint": "http://www.quizz.biz/api/oembed",
     "documentation": "http://www.quizz.biz/aide-oembed.php",
     "example": "http://www.quizz.biz/api/oembed?url=http://www.quizz.biz/quizz-339842.html&format=json",
     "supports_discovery_via_link_tags": true
@@ -406,29 +442,51 @@
   {
     "name": "SpeakerDeck",
     "url": "https://speakerdeck.com",
+    "url_scheme": [
+      "http://speakerdeck.com/*/*",
+      "https://speakerdeck.com/*/*"
+    ],
+    "api_endpoint": "https://speakerdeck.com/oembed.json",
     "example": "https://speakerdeck.com/oembed.json?url=https://speakerdeck.com/wallat/why-backbone",
     "supports_discovery_via_link_tags": true
   },
   {
     "name": "Alpha App Net",
     "url": "https://alpha.app.net",
+    "url_scheme": [
+      "https://alpha.app.net/*/post/*",
+      "https://photos.app.net/*/*"
+    ],
+    "api_endpoint": "https://alpha-api.app.net/oembed",
     "documentation": "http://developers.app.net/docs/other/oembed/",
     "example": "https://alpha-api.app.net/oembed?url=https://alpha.app.net/breakingnews/post/9153521"
   },
   {
     "name": "BlipTV",
     "url": "http://blip.tv/",
+    "url_scheme": "http://*.blip.tv/*/*",
+    "api_endpoint": "http://blip.tv/oembed/",
     "example": "http://blip.tv/oembed/?url=http://blip.tv/nostalgiacritic/nostalgia-critic-sailor-moon-6625851"
   },
   {
     "name": "YFrog",
     "url": "http://yfrog.com/",
+    "url_scheme": [
+      "http://*.yfrog.com/*",
+      "http://yfrog.us/*"
+    ],
+    "api_endpoint": "http://www.yfrog.com/api/oembed(only",
     "documentation": "http://twitter.yfrog.com/page/api#a8",
     "example": "http://www.yfrog.com/api/oembed?url=http://yfrog.com/jukynnj"
   },
   {
     "name": "Instagram",
     "url": "https://instagram.com",
+    "url_scheme": [
+      "http://instagram.com/p/*",
+      "http://instagr.am/p/*"
+    ],
+    "api_endpoint": "http://api.instagram.com/oembed",
     "documentation": "http://instagram.com/developer/embedding/#oembed",
     "example": "http://api.instagram.com/oembed?url=http://instagram.com/p/V8UMy0LjpX/"
   },
@@ -436,18 +494,21 @@
     "name": "SoundCloud",
     "url": "http://soundcloud.com/",
     "url_scheme": "http://soundcloud.com/*",
+    "api_endpoint": "https://soundcloud.com/oembed",
     "example": "https://soundcloud.com/oembed?url=https://www.soundcloud.com/comedy-central/the-unf-kables-dave-attell/&format=xml"
   },
   {
     "name": "On Aol",
     "url": "http://on.aol.com/",
     "url_scheme": "http://on.aol.com/video/*",
+    "api_endpoint": "http://on.aol.com/api",
     "example": "http://on.aol.com/api?url=http://on.aol.com/video/plans-to-clone-john-lennon-using-one-of-his-teeth-517906689"
   },
   {
     "name": "Kickstarter",
     "url": "http://www.kickstarter.com",
     "url_scheme": "http://www.kickstarter.com/projects/*",
+    "api_endpoint": "http://www.kickstarter.com/services/oembed",
     "example": "http://www.kickstarter.com/services/oembed?url=http%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1115015686%2Fhelp-support-the-kiggins-theatre-to-go-digital"
   },
   {
@@ -506,6 +567,7 @@
     "name": "AudioSnaps",
     "url": "http://audiosnaps.com/",
     "url_scheme": "http://audiosnaps.com/k/*",
+    "api_endpoint": "http://audiosnaps.com/service/oembed",
     "example": [
       "http://audiosnaps.com/service/oembed?url=http://audiosnaps.com/k/d8wi/&format=json",
       "http://audiosnaps.com/service/oembed?url=http://audiosnaps.com/k/d8wi/&format=xml"
@@ -536,7 +598,10 @@
     "url": "http://www.ora.tv",
     "supports_discovery_via_link_tags": true,
     "api_endpoint": "https://www.ora.tv/oembed/*?format={format}",
-    "example": "https://www.ora.tv/oembed/0_6e6tvou17xau?format=json"
+    "example": "https://www.ora.tv/oembed/0_6e6tvou17xau?format=json",
+    "url_scheme": [
+
+    ]
   },
   {
     "name": "Getty Images",
