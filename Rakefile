@@ -125,3 +125,13 @@ task :scrape_microsoft_mime_types do
 	types = cells.reject {|c| c.text == 'MIME Type' }.map {|c| c.text }.uniq
 	File.write('./data/microsoft_mime_types.json', JSON.pretty_generate(types))
 end
+
+require 'httparty'
+require 'json'
+desc 'try embedly'
+task :embedly do
+	key = ENV['EMBEDLY_API_KEY']
+	target_url = ENV['URL']
+	url = "http://api.embed.ly/1/oembed?key=#{key}&url=#{target_url}&format=json"
+	puts JSON.pretty_generate JSON.parse HTTParty.get(url).body
+end
